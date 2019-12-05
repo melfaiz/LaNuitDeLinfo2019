@@ -3,14 +3,8 @@
 
     <!-- Three Column Section -->
     <div class="container-fluid padding balls">
-      <div class="row text-center padding" id="types">
-        <div class="col-sm-12 col-md-6">
-          <a href="#">
-            <img src="../assets/health.png" style="width:80px;height:70px;" />
-            <h3 id="foot">
-              <span>Santé</span>
-            </h3>
-          </a>
+      <div id="jumb" class="row jumbotron">
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
           <p>Votre santé est notre priorité.</p>
         </div>
       </div>

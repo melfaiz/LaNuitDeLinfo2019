@@ -54,39 +54,39 @@
     <div class="container-fluid padding balls">
       <div class="row text-center padding" id="types">
         <div class="col-sm-12 col-md-6">
-          <a href="/Sante">
+          <router-link to="/Sante">
             <img src="../assets/health.png" style="width:80px;height:70px;" />
             <h3 id="foot">
               <span>Santé</span>
             </h3>
-          </a>
+          </router-link>
           <p>Votre santé est notre priorité.</p>
         </div>
         <div class="col-sm-12 col-md-6">
-          <a href="/Logement">
+          <router-link to="/Logement">
             <img src="../assets/house.png" style="width:70px;height:70px;" />
             <h3 id="foot">
               <span>Logement</span>
             </h3>
-          </a>
+          </router-link>
           <p>Besoin d'aide pour touver un logement ou pour recevoir les aides ?</p>
         </div>
         <div class="col-sm-12 col-md-6">
-          <a href="/Etudes">
+          <router-link to="/Etudes">
             <img src="../assets/book.png" style="width:70px;height:70px;" />
             <h3 id="foot">
               <span>Études</span>
             </h3>
-          </a>
+          </router-link>
           <p>On vous accompagne le long de votre parcours.</p>
         </div>
         <div class="col-sm-12 col-md-6">
-          <a href="/FAQ">
+          <router-link to="/FAQ">
             <img src="../assets/question.png" style="width:70px;height:70px;" />
             <h3 id="foot">
               <span>Autres démarches</span>
             </h3>
-          </a>
+          </router-link>
           <p>Notre FAQ est riche d'informations.</p>
         </div>
       </div>

@@ -5,7 +5,7 @@
         <a class="navbar-brand" href="#">
           <router-link to="/">
           <img
-            alt="quickmatch-logo"
+            alt="heretohelp-logo"
             src="../assets/heretohelp.jpg"
             style="width:80px;height:80px;"
           />
