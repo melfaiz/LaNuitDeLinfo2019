@@ -42,8 +42,7 @@ hit = new sound("sounds/bounce.mp3");
 losts = new sound("sounds/lost.mp3");
 spin = new sound("sounds/spin.mp3");
 
-document.addEventListener("click", mousedown,false)
-
+document.addEventListener("click", mousedown,false);
 
 document.addEventListener("touchend", touch, false);
 
@@ -53,8 +52,14 @@ function touch(){
 }
 function lostf(){
 	losts.play();
+
 }
 
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        mousedown();
+    }
+}
 
 	
 
@@ -62,13 +67,12 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                             window.mozRequestAnimationFrame || 
                             window.webkitRequestAnimationFrame || 
                             window.msRequestAnimationFrame;
-        // var position = [];
 
 
 var bird = {
 	x: W/2-50,
 	y: H/2-10,	
-	vx: 2,
+	vx: 3.5,
 	vy: 5,
 	jumping: false,
 	jumpingv: 10,
@@ -85,7 +89,6 @@ var bird = {
 
 	}
 };
-
 
 
 

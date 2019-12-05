@@ -99,6 +99,7 @@ function preloadImages(array) {
 
 function mousedown(){
     jump();
+    spin.play();
     gameon = true;
     
 }
@@ -200,7 +201,7 @@ function lost(){
     score=0;
     bird.x= W/2-50;
     bird.y= H/2-10;  
-    bird.vx= 2;
+    bird.vx= 3.5;
     bird.vy= 5;
     img.src = "img/bird1.png";
     spikesmatrix = [generate(1),generate(1)];
