@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript game</title>
+    <script src="canvas.js"></script>
+        <script src="test.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=0.85, maximum-scale=0.85, user-scalable=0"/>
+
+
+
+</head>
+<body>
+
+
+
+
+<canvas id="myCanvas" width="400" height="600"></canvas>
+
+
+<script>
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var W = canvas.width;
+var H = canvas.height;
+var spikex=10;
+var spr=Math.sqrt(2*(spikex*spikex))
+var img = new Image();
+var mouseClicked=false;
+var gameon=false;
+var faces = ["img/bird1.png", "img/bird11.png", "img/bird2.png","img/bird22.png"];
+preloadImages(faces);
+var spikesmatrix = [generate(1),generate(1)];
+var score =0;
+var max=0;
+var img = new Image();
+img.src = "img/bird1.png";
+hit = new sound("sounds/bounce.mp3");
+losts = new sound("sounds/lost.mp3");
+spin = new sound("sounds/spin.mp3");
+
+document.addEventListener("click", mousedown,false)
+
+
+document.addEventListener("touchend", touch, false);
+
+function touch(){
+	spin.play();
+
+}
+function lostf(){
+	losts.play();
+
+}
+
+
+	
+
+var requestAnimationFrame = window.requestAnimationFrame || 
+                            window.mozRequestAnimationFrame || 
+                            window.webkitRequestAnimationFrame || 
+                            window.msRequestAnimationFrame;
+        // var position = [];
+
+
+var bird = {
+	x: W/2-50,
+	y: H/2-10,	
+	vx: 2,
+	vy: 5,
+	jumping: false,
+	jumpingv: 10,
+	l:100,
+	h:65,
+
+	draw: function() {
+		ctx.drawImage(img,this.x,this.y, this.l, this.h);
+	},
+	move: function () {
+	// var a = position[0];
+	// var b = position[1];
+    this.y += this.vy;
+    this.x += this.vx;
+     // this.y =b;
+     // this.x =a;
+	}
+};
+
+// function getMousePos(canvas, evt) {
+// var rect = canvas.getBoundingClientRect();
+// return {
+//   x: evt.clientX - rect.left,
+//   y: evt.clientY - rect.top
+// };
+// }
+
+// canvas.addEventListener('mousemove', function(evt) {
+//         var mousePos = getMousePos(canvas, evt);
+//         position[0] = mousePos.x;
+//         position[1] = mousePos.y;
+
+        
+//       }, false);
+
+
+animate();
+
+
+
+
+</script>
+
+
+</body>
+</html>
