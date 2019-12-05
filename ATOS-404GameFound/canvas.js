@@ -179,8 +179,9 @@ function animate(){
     drawspikes(spikesmatrix);
     hitspikes();
     
-    edges();   
+    
     bird.move();
+    edges();  
     gravity();
        
     }else{
@@ -191,7 +192,7 @@ function animate(){
     requestAnimationFrame(animate);
 };
 function lost(){
-    // losts.play();
+    
     lostf();
     window.alert("YOU LOST \nPLAY AGAIN");
     gameon=false;
@@ -222,7 +223,7 @@ function edges(){
             bird.vy = 0 ;
             bird.jumping = false;
             lost();
-        }else if (bird.y + bird.vy <= spikex)
+        }else if (bird.y + bird.vy <= spikex) // top
         {   bird.y = spikex;        
             bird.vy = 0 ;
             lost();
@@ -236,7 +237,7 @@ function edges(){
             score+=1;
             bird.vx = -bird.vx;
             img.src = faces[0];
-        }else if (bird.x + bird.vx > W-bird.l)
+        }else if (bird.x + bird.vx > W-bird.l) // right
 
         {   
             hit.play();

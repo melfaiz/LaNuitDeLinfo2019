@@ -53,7 +53,6 @@ function touch(){
 }
 function lostf(){
 	losts.play();
-
 }
 
 
@@ -80,30 +79,14 @@ var bird = {
 		ctx.drawImage(img,this.x,this.y, this.l, this.h);
 	},
 	move: function () {
-	// var a = position[0];
-	// var b = position[1];
+
     this.y += this.vy;
     this.x += this.vx;
-     // this.y =b;
-     // this.x =a;
+
 	}
 };
 
-// function getMousePos(canvas, evt) {
-// var rect = canvas.getBoundingClientRect();
-// return {
-//   x: evt.clientX - rect.left,
-//   y: evt.clientY - rect.top
-// };
-// }
 
-// canvas.addEventListener('mousemove', function(evt) {
-//         var mousePos = getMousePos(canvas, evt);
-//         position[0] = mousePos.x;
-//         position[1] = mousePos.y;
-
-        
-//       }, false);
 
 
 animate();
