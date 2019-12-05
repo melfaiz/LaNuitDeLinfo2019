@@ -15,8 +15,6 @@
 <body>
 
 
-
-
 <canvas id="myCanvas" width="400" height="600"></canvas>
 
 
@@ -42,8 +40,7 @@ hit = new sound("sounds/bounce.mp3");
 losts = new sound("sounds/lost.mp3");
 spin = new sound("sounds/spin.mp3");
 
-document.addEventListener("click", mousedown,false)
-
+document.addEventListener("click", mousedown,false);
 
 document.addEventListener("touchend", touch, false);
 
@@ -56,6 +53,11 @@ function lostf(){
 
 }
 
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        mousedown();
+    }
+}
 
 	
 
@@ -63,13 +65,12 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                             window.mozRequestAnimationFrame || 
                             window.webkitRequestAnimationFrame || 
                             window.msRequestAnimationFrame;
-        // var position = [];
 
 
 var bird = {
 	x: W/2-50,
 	y: H/2-10,	
-	vx: 2,
+	vx: 3.5,
 	vy: 5,
 	jumping: false,
 	jumpingv: 10,
@@ -80,30 +81,13 @@ var bird = {
 		ctx.drawImage(img,this.x,this.y, this.l, this.h);
 	},
 	move: function () {
-	// var a = position[0];
-	// var b = position[1];
+
     this.y += this.vy;
     this.x += this.vx;
-     // this.y =b;
-     // this.x =a;
+
 	}
 };
 
-// function getMousePos(canvas, evt) {
-// var rect = canvas.getBoundingClientRect();
-// return {
-//   x: evt.clientX - rect.left,
-//   y: evt.clientY - rect.top
-// };
-// }
-
-// canvas.addEventListener('mousemove', function(evt) {
-//         var mousePos = getMousePos(canvas, evt);
-//         position[0] = mousePos.x;
-//         position[1] = mousePos.y;
-
-        
-//       }, false);
 
 
 animate();
