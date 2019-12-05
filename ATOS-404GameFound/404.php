@@ -15,6 +15,23 @@
 <body>
 
 
+<?php 
+
+$dsn = "mysql:host=localhost;dbname=lndl";
+$user = "root";
+$passwd = "";
+
+$pdo = new PDO($dsn, $user, $passwd);
+
+$stm = $pdo->query("SELECT VERSION()");
+
+
+
+
+
+?>
+
+
 <canvas id="myCanvas" width="400" height="600"></canvas>
 
 
