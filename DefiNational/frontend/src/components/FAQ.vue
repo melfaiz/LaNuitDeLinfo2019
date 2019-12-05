@@ -1,239 +1,132 @@
 <template>
-  <div class="hello">
-    <!-- image slider -->
-    <div >
-      <b-carousel
-        id="carousel-1"
-        v-model="slide"
-        indicators
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
-      >
-        <b-carousel-slide>
-          <template v-slot:img>
-            <img src="../assets/help.jpg" />
-            <div id="caption" class="carousel-caption">
-              <h1 class="display-2">HereToHelp</h1>
-              <h3 id="head-c">Plus jamais du temps à perdre</h3>
-              <button type="button" class="btn btn-outline-dark btn-lg btn-light">Se connecter</button>
-              <button type="button" class="btn btn-primary btn-lg">S'inscrire</button>
-            </div>
-          </template>
-        </b-carousel-slide>
-        </b-carousel>
-    </div>
-
-    <!-- Jumbotron -->
-    <div class="container-fluid">
-      <div id="jumb" class="row jumbotron">
-        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <p class="lead">HereToHelp organise votre vie de tous les jours.</p>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-          <a href="#">
-            <button id="reg" type="button" class="btn btn-outline-secondary btn-lg">rejoignez nous</button>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Welcome Section -->
-    <div class="container-fluid padding">
-      <div class="row welcome text-center">
-        <div class="col-12">
-          <h1 class="display-4">Une meilleure expérience</h1>
-        </div>
-        <hr />
-        <div class="col-12">
-          <p class="lead">Besoin d'aide ? Nous sommes là pour vous !</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Three Column Section -->
-    <div class="container-fluid padding balls">
-      <div class="row text-center padding" id="types">
-        <div class="col-sm-12 col-md-6">
-          <a href="/sante">
-            <img src="../assets/health.png" style="width:80px;height:70px;" />
-            <h3 id="foot">
-              <span>Santé</span>
-            </h3>
-          </a>
-          <p>Votre santé est notre priorité.</p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <a href="#">
-            <img src="../assets/house.png" style="width:70px;height:70px;" />
-            <h3 id="foot">
-              <span>Logement</span>
-            </h3>
-          </a>
-          <p>Besoin d'aide pour touver un logement ou pour recevoir les aides ?</p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <a href="#">
-            <img src="../assets/book.png" style="width:70px;height:70px;" />
-            <h3 id="foot">
-              <span>Études</span>
-            </h3>
-          </a>
-          <p>On vous accompagne le long de votre parcours.</p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <a href="#">
-            <img src="../assets/question.png" style="width:70px;height:70px;" />
-            <h3 id="foot">
-              <span>Autres démarches</span>
-            </h3>
-          </a>
-          <p>Notre FAQ est riche d'informations.</p>
-        </div>
-      </div>
-      <hr class="my-4" />
-    </div>
-
-    <!-- connect -->
-    <div id="connect" class="container-fluid padding">
-      <div class="row text-center padding">
-        <div class="col-12">
-          <h2>Connect</h2>
-        </div>
-        <div class="col-12 social padding">
-          <a href="#">
-            <img src="../assets/fb.png" style="width:50px;height:50px;" />
-          </a>
-          <a href="#">
-            <img src="../assets/twitter.png" style="width:50px;height:50px;" />
-          </a>
-          <a href="#">
-            <img src="../assets/instagram.png" style="width:50px;height:50px;" />
-          </a>
-          <a href="#">
-            <img src="../assets/google.png" style="width:50px;height:50px;" />
-          </a>
-          <a href="#">
-            <img src="../assets/youtube.png" style="width:50px;height:50px;" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="app"><VueFaqAccordion :items="myItems" /></div>
 </template>
 
 <script>
+import VueFaqAccordion from "vue-faq-accordion";
+
 export default {
+  name: "App",
+  components: {
+    VueFaqAccordion
+  },
   data() {
     return {
-      slide: 0,
-      sliding: null
+      myItems: [
+        {
+          title: "Qui contacté pour avoir droits aux aides au logement ?",
+          value:
+            "La CAF est la caisse chargée des aides au logement. Pour y accéder, cliquez <a href=\"http://www.caf.fr/\"> ici </a>",
+          category: "Logement"
+        },
+        {
+          title: "Je suis étudiant. Où pourrais je trouver un logement?",
+          value:
+            "Il y a plusieurs site où vous pouvez chercher un logement dont <a href=\"https://www.etudiant.gouv.fr/\"> le Crous </a>, <a href=\"https://www.lokaviz.fr/\"> Lokaviz </a>, <a href=\"https://www.nexity-studea.com/locations-etudiantes/paris\"> Studea </a> ou encore <a href=\"https://www.leboncoin.fr/\"> chez des particuliers </a>",
+          category: "Logement"
+        },
+        {
+          title: "Est ce que je pourrais savoir le montant des aides ?",
+          value:
+            "La CAF a créé un simulateur auquel vous pouvez accéder par <a href=\"http://www.caf.fr/allocataires/mes-services-en-ligne/faire-une-simulation\"> ici </a>",
+          category: "Logement"
+        },
+        {
+          title: "Que-ce qu'une complémentaire santé ?",
+          value:
+            "En France, l'assurance maladie complémentaire (AMC), ou complémentaire santé, est un système d'assurance maladie qui complète celui de la Sécurité sociale en intervenant sous forme d'un complément de remboursement des soins.",
+          category: "Santé"
+        },
+        {
+          title: "Que-ce qu'une complémentaire santé ?",
+          value:
+            "En France, l'assurance maladie complémentaire (AMC), ou complémentaire santé, est un système d'assurance maladie qui complète celui de la Sécurité sociale en intervenant sous forme d'un complément de remboursement des soins.",
+          category: "Santé"
+        },
+        {
+          title: "Que-ce que la CMU?",
+          value:
+            "La CMU permet aux personnes ayant de faibles revenus (personnes touchant le RMI, chômeurs en fin de droits, chômeurs…) d’être affilié à l’assurance maladie et de bénéficier des mêmes soins que les personnes affiliées aux autres régimes de la sécurité sociale.",
+          category: "Santé"
+        },
+        {
+          title: "Qui peut bénificier de la CMU?",
+          value: "si vous bénéficiez de la prise en charge de vos frais de santé par l'Assurance Maladie en raison de votre activité professionnelle ou de votre résidence stable et régulière en France ou si vos ressources sont inférieures à un montant qui dépend de la composition de votre foyer.",
+          category: "Santé"
+        },
+        {
+          title: "Où trouver les informations concernant la CMU?",
+          value: "Pour accéder au site de la CMU, cliquez <a href=\"https://www.ameli.fr/gironde/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire-qui-peut-en-beneficier-et-comment#text_90553\"> ici </a>",
+          category: "Santé"
+        },
+        {
+          title: "Comment pourrais je bénificier d'une bourse pour payer mes études ?",
+          value:
+            "Les BCS (bourses sur critères sociaux) sont accordées au moins de 28 ans en fonction du revenu des parents, du nombre d'enfants à charge, de l'éloignement domicile-lieu d'études, du diplôme et de la nationalité. Pour en bénéficier, l'étudiant doit être présent aux cours et aux examens, et progresser normalement des ses études. Le montant est variable : de la seule exonération des droits d’inscription et de CVEC (contribution vie étudiante et de campus) à 5 612 € environ sur 10 mois. Pour y accéder, cliquez <a href=\"https://www.messervices.etudiant.gouv.fr/envole/\"> ici </a>",
+          category: "Études"
+        },
+        {
+          title: "Est ce qu'il y a un autre type de bourse pour payer mes études ?",
+          value:
+            "L'aide au mérite est un complément versé aux boursiers BCS et aux allocataires d'une aide spécifique annuelle qui ont obtenu la mention \"très bien\" au bac. Son montant est de 900 € pour les bacheliers 2019. Elle est versée en 9 fois.",
+          category: "Études"
+        },
+        {
+          title: "Est ce qu'il y a un autre moyen pour payer mes études ?",
+          value:
+            "Contactez la direction de votre école pour négotier une éxoneration si possible.",
+          category: "Études"
+        },
+        {
+          title: "Est ce que je pourrais savoir le montant de cette bourse ?",
+          value:
+            "Il y a un simulateur de bourse. Pour y accéder, cliquez <a href=\"https://simulateur.lescrous.fr/\"> ici </a>",
+          category: "Études"
+        },
+        {
+          title: "Est ce qu'il y a un moyen pour financer des études en Europe ?",
+          value:
+            "L'allocation Erasmus + est attribuée aux étudiants effectuant une partie de leurs études en Europe dans le cadre d'un échange inter-établissements. Informations auprès du service des relations internationales de son établissement 6 à 12 mois à l'avance. Cette aide est cumulable avec la bourse BCS.",
+          category: "Études"
+        },
+        {
+          title: "Est ce qu'il y a un moyen pour financer des études à l'internationale ?",
+          value:
+          "L'aide à la mobilité internationale, d'un montant de 400 € par mois, est un complément versé, entre autre, aux boursiers BCS pour des séjours d'études à l'étranger compris entre 2 et 9 mois consécutifs. S'adresser au service des relations internationales de son établissement, qui sélectionne les étudiants. L'aide est versée par l'établissement. Elle est cumulable avec l'aide au mérite.",
+          category: "Études"
+        },
+        {
+          title: "Où pourrais je trouver les détails de ces bourses ?",
+          value:
+          "<a href=\"http://www.onisep.fr/Choisir-mes-etudes/Apres-le-bac/La-vie-etudiante/Financer-ses-etudes-bourses-aides-prets\"> Ce lien </a> contient plus de détails sur plusieurs types de bourses.", 
+          category: "Études"
+        },
+        {
+          title: "Est ce qu'il y a des réductions pour les étudiants ?",
+          value:
+            "Contactez la société de transport correspendante à votre ville pour avoir plus d'informations.",
+          category: "Transport"
+        },
+        {
+          title: "Qu'est ce que la tarifaction solidaire ?",
+          value:
+            "La Carte Solidaire permet de bénéficier jusqu'à 80% de réduction sur les trajets en trains et cars régionaux. Pour la Nouvelle Aquitaine, visitez <a href=\"https://transports.nouvelle-aquitaine.fr/fr/actualite/nouveau-tarif-solidaire-pour-trajets-en-trains-cars-regionaux\"> ce site </a>",
+          category: "Transport"
+        }
+      ]
     };
   }
-  // methods: {
-  //   onSlideStart(slide) {
-  //     this.sliding = true;
-  //   },
-  //   onSlideEnd(slide) {
-  //     this.sliding = false;
-  //   }
-  // }
 };
 </script>
 
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-/* h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-} */
-
-#head-c {
-  margin-top: 0px;
-  margin-bottom: 10px;
-}
-#reg {
-  margin-right: 10px;
-}
-#foot {
-  margin-top: 15px;
-}
-#jumb {
-  padding: 20px 10px 20px 10px;
-}
-#connect {
-  padding-bottom: 40px;
-}
-#types {
-  margin-left: 70px;
-  margin-right: 70px;
-}
-
-.balls {
-  padding-top: 50px;
-}
-.display-2 {
-  margin-bottom: 0px;
-}
-
-.lead {
-  padding: 12px 0px 0px 0px;
-}
-
-.social {
-  padding-top: 30px;
-}
-
-.social a {
-  margin-right: 40px;
-}
-.carousel-inner img {
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-caption {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-30%);
-}
-.carousel-caption h1 {
-  font-size: 500%;
-  text-shadow: 1px 1px 7px #1e013d;
-}
-.carousel-caption h2 {
-  font-size: 200%;
-  font-weight: 500;
-  text-shadow: 1px 1px 1px 7px #1e013d;
-}
-
-.container-fluid a {
-  color: #000;
-}
-.container-fluid a:hover {
-  color: #3c007a;
-  text-decoration: none;
-}
-.btn-primary {
-  background-color: #3c007a;
-  border: 1px solid black;
-}
-.btn-primary:hover {
-  background-color: #180031;
-  border: 1px solid grey;
-}
-
-.btn-secondary {
-  border: 1px solid #3c007a;
+<style>
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+  text-align: center;
 }
 </style>
