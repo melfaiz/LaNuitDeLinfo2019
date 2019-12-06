@@ -14,6 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <template>
           <ul class="navbar-nav ml-auto">
+            
             <li class="nav-item active">
               <router-link to="/" class="nav-link">Home</router-link>
             </li>

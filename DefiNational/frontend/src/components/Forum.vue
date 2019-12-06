@@ -1,5 +1,6 @@
 <template>
   <div>
+    <a href="#/Discussion" class="btn btn-primary">discussion</a>
     <strong>
       <div class="mt-4" v-for="dis in discussionsToShow" v-bind:key="dis.id">
         <b-card v-model="discussionsToShow" style="width:80%; margin-left:10%">

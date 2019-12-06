@@ -7,6 +7,8 @@ import Sante from '../components/Sante.vue'
 import Logement from '../components/Logement.vue'
 import Etudes from '../components/Etudes.vue'
 import FAQ from '../components/FAQ.vue'
+import Forum from '../components/Forum.vue'
+import Discussion from '../components/Discussion.vue'
 import Secret from '../components/Secret.vue'
 import Level1 from '../components/Level1.vue'
 import Level2 from '../components/Level2.vue'
@@ -34,6 +36,7 @@ export default new Router({
         {path: '/Logement', name: 'Logement', component: Logement },
         {path: '/Etudes', name: 'Etudes', component: Etudes },
         {path: '/FAQ', name: 'FAQ', component: FAQ },
+        {path: '/Forum', name: 'Forum', component: Forum },
         {path: '/secret', name: 'Secret', component: Secret },
         {path: '/Level1', name: 'Level1', component: Level1 },
         {path: '/Level2', name: 'Level2', component: Level2 },
@@ -45,6 +48,7 @@ export default new Router({
         {path: '/Login', name: 'Login', component: Login },
         {path: '/Register', name: 'Register', component: Register },
         {path: '/Dashboard', name: 'Dashboard', component: Dashboard },
+        {path: '/Discussion', name: 'Discussion', component: Discussion },
         {path: '/*', redirect: '../../public/404.html' },
     ]
 })
