@@ -18,15 +18,14 @@ import Level7 from '../components/Level7.vue'
 import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
 import Dashboard from '../components/Dashboard.vue'
-import Discussion from "../components/Discussion.vue";
-import Forum from "../components/Forum.vue";
 
 
 
 Vue.use(Router);
 Vue.use(CircularCountDownTimer);
 
-Vue.use(Router);
+
+Vue.use(Router)
 
 export default new Router({
     routes: [
@@ -46,8 +45,6 @@ export default new Router({
         {path: '/Login', name: 'Login', component: Login },
         {path: '/Register', name: 'Register', component: Register },
         {path: '/Dashboard', name: 'Dashboard', component: Dashboard },
-        { path: "/Discussion", name: "Discussion", component: Discussion },
-        { path: "/Forum", name: "Forum", component: Forum }
         {path: '/*', redirect: '../../public/404.html' },
     ]
 })
