@@ -1,96 +1,53 @@
 <template>
-  <div class="hello">
-    <!-- image slider -->
-    <div >
-      <b-carousel
-        id="carousel-1"
-        v-model="slide"
-        indicators
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
-      >
-        <b-carousel-slide>
-          <template v-slot:img>
-            <img src="../assets/help.jpg" />
-            <div id="caption" class="carousel-caption">
-              <h1 class="display-2">HereToHelp</h1>
-              <h3 id="head-c">Plus jamais du temps à perdre</h3>
-              <button type="button" class="btn btn-outline-dark btn-lg btn-light">Se connecter</button>
-              <button type="button" class="btn btn-primary btn-lg">S'inscrire</button>
-            </div>
-          </template>
-        </b-carousel-slide>
-        </b-carousel>
-    </div>
-
-    <!-- Jumbotron -->
-    <div class="container-fluid">
-      <div id="jumb" class="row jumbotron">
-        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <p class="lead">HereToHelp organise votre vie de tous les jours.</p>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-          <a href="#">
-            <button id="reg" type="button" class="btn btn-outline-secondary btn-lg">rejoignez nous</button>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Welcome Section -->
-    <div class="container-fluid padding">
-      <div class="row welcome text-center">
-        <div class="col-12">
-          <h1 class="display-4">Une meilleure expérience</h1>
-        </div>
-        <hr />
-        <div class="col-12">
-          <p class="lead">Besoin d'aide ? Nous sommes là pour vous !</p>
-        </div>
-      </div>
-    </div>
+  <div>
 
     <!-- Three Column Section -->
-    <div class="container-fluid padding balls">
-      <div class="row text-center padding" id="types">
-        <div class="col-sm-12 col-md-6">
-          <a href="/sante">
-            <img src="../assets/health.png" style="width:80px;height:70px;" />
-            <h3 id="foot">
-              <span>Santé</span>
-            </h3>
-          </a>
-          <p>Votre santé est notre priorité.</p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <a href="#">
-            <img src="../assets/house.png" style="width:70px;height:70px;" />
-            <h3 id="foot">
-              <span>Logement</span>
-            </h3>
-          </a>
-          <p>Besoin d'aide pour touver un logement ou pour recevoir les aides ?</p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <a href="#">
-            <img src="../assets/book.png" style="width:70px;height:70px;" />
-            <h3 id="foot">
-              <span>Études</span>
-            </h3>
-          </a>
-          <p>On vous accompagne le long de votre parcours.</p>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <a href="#">
-            <img src="../assets/question.png" style="width:70px;height:70px;" />
-            <h3 id="foot">
-              <span>Autres démarches</span>
-            </h3>
-          </a>
-          <p>Notre FAQ est riche d'informations.</p>
-        </div>
-      </div>
+    <div>
+        <b>
+          <p id="sante">On vous accompagne le long de votre parcours.</p>
+        </b>
+
+        <div class="container-fluid padding balls">
+          <div class="row text-center padding" id="types">
+            <div class="col-sm-12 col-md-6">
+              <a href="https://www.etudiant.gouv.fr/">
+                <img src="../assets/logo-mse.png" style="width:120px;height:70px;" />
+                <h3 id="foot">
+                  <span>Différentes aides</span>
+                </h3>
+              </a>
+              <p>Plusieurs aides pour financer vos études sont proposées.</p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <a href="https://simulateur.lescrous.fr/">
+                <img src="../assets/calculatrice.png" style="width:70px;height:70px;" />
+                <h3 id="foot">
+                  <span>Simuler ma bourse</span>
+                </h3>
+              </a>
+              <p>Vous pouvez simuler le montant de la bourse.</p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <a href="https://info.erasmusplus.fr/">
+                <img src="../assets/erasmus-.png" style="width:90px;height:70px;" />
+                <h3 id="foot">
+                  <span>Erasmus +</span>
+                </h3>
+              </a>
+              <p>Aide à la mobilité en Europe.</p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <router-link to="/FAQ">
+                <img src="../assets/question.png" style="width:70px;height:70px;" />
+                <h3 id="foot">
+                  <span>Autres questions</span>
+                </h3>
+              </router-link>
+              <p>Notre FAQ est riche d'informations.</p>
+            </div>
+          </div>
       <hr class="my-4" />
+    </div>
     </div>
 
     <!-- connect -->
@@ -235,5 +192,17 @@ a {
 
 .btn-secondary {
   border: 1px solid #3c007a;
+}
+
+#sante{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 200%;
+  text-align: center;
+}
+
+#parag{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  text-align: start;
 }
 </style>

@@ -1,51 +1,58 @@
 <template>
-  <div>
 
+  <div>
+    <div class="countdown">
+            <circular-count-down-timer :initial-value="40" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
     <!-- Three Column Section -->
     <div>
         <b>
-          <p id="sante">Besoin d'aide pour touver un logement ou pour recevoir les aides ?</p>
+          <p id="sante">Sélectionner toute votre santé.</p>
         </b>
-
         <div class="container-fluid padding balls">
           <div class="row text-center padding" id="types">
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.etudiant.gouv.fr/">
-                <img src="../assets/logo-crous.jpg" style="width:80px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=4Js-XbNj6Tk">
+                <img src="../assets/chu.png" style="width:120px;height:70px;" />
                 <h3 id="foot">
-                  <span>Logement social</span>
+                  <span>Centres Hospitaliers Universitaires</span>
                 </h3>
               </a>
-              <p>Les crous vous proposent des logements sociaux sur plusieurs villes françaises.</p>
+              <p>Les CHUs sont des centres d'hospitalisation à votre disposition.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.caf.fr/">
-                <img src="../assets/caf.jpg" style="width:70px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=feA64wXhbjo">
+                <img src="../assets/ameli.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
-                  <span>Aides au logement</span>
+                  <span>CMU</span>
                 </h3>
               </a>
-              <p>La Caisse d'allocations familliales (CAF) s'occupe des aides au logement.</p>
+              <p>Ameli vous propose un programme CMU pour vous aider.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <router-link to="https://www.pap.fr/">
-                <img src="../assets/pap.png" style="width:70px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=GPXkjtpGCFI">
+                <img src="../assets/health.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
-                  <span>Chez un particulier</span>
+                  <span>Complémentaire santé solidaire</span>
                 </h3>
-              </router-link>
-              <p>Plusieurs site vous propose la location chez un particulier dont PAP.</p>
+              </a>
+              <p>Un complémentaire à la sécurité sociale.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <router-link to="/FAQ">
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                 <img src="../assets/question.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
                   <span>Autres questions</span>
                 </h3>
-              </router-link>
+              </a>
               <p>Notre FAQ est riche d'informations.</p>
             </div>
           </div>
+        <div>
+            <a href="#/Level2" id="hidden">
+            Press Here.
+            </a>
+        </div>
       <hr class="my-4" />
     </div>
     </div>
@@ -83,17 +90,13 @@ export default {
   data() {
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
+      text: ""
     };
-  }
-  // methods: {
-  //   onSlideStart(slide) {
-  //     this.sliding = true;
-  //   },
-  //   onSlideEnd(slide) {
-  //     this.sliding = false;
-  //   }
-  // }
+  },
+  finished: () => {
+        this.router.push("#");
+    },
 };
 </script>
 
@@ -205,4 +208,9 @@ a {
   font-size: 100%;
   text-align: start;
 }
+
+#hidden{
+  color:white;
+}
+
 </style>

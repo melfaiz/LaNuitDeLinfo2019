@@ -14,6 +14,9 @@
             <img src="../assets/help.jpg" />
             <div id="caption" class="carousel-caption">
               <h1 class="display-2">HereToHelp</h1>
+              <h3 id="head-c">Bienvenue à notre chasse au trésor</h3>
+              <button type="button" class="btn btn-outline-dark btn-lg btn-light">Se connecter</button>
+              <button type="button" class="btn btn-primary btn-lg">S'inscrire</button>
             </div>
           </template>
         </b-carousel-slide>
@@ -24,7 +27,7 @@
     <div class="container-fluid">
       <div id="jumb" class="row jumbotron">
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <p class="lead">HereToHelp organise votre vie de zero à 
+          <p class="lead">HereToHelp organise votre passage de zero à 
             <router-link to="/Level1">
             un.
             </router-link>
@@ -42,7 +45,7 @@
     <div class="container-fluid padding">
       <div class="row welcome text-center">
         <div class="col-12">
-          <h1 class="display-4">HereToHelp</h1>
+          <h1 class="display-4">Vous êtes au Niveau 0</h1>
         </div>
         <hr />
         <div class="col-12">

@@ -1,40 +1,43 @@
 <template>
   <div>
+    <div class="countdown">
+            <circular-count-down-timer :initial-value="90" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
 
     <!-- Three Column Section -->
     <div>
         <b>
-          <p id="sante">Besoin d'aide pour touver un logement ou pour recevoir les aides ?</p>
+          <p id="sante">Envolez vous vers de nouveaux horizons</p>
         </b>
 
         <div class="container-fluid padding balls">
           <div class="row text-center padding" id="types">
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.etudiant.gouv.fr/">
-                <img src="../assets/logo-crous.jpg" style="width:80px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=4Js-XbNj6Tk">
+                <img src="../assets/logo-mse.png" style="width:120px;height:70px;" />
                 <h3 id="foot">
-                  <span>Logement social</span>
+                  <span>Différentes aides</span>
                 </h3>
               </a>
-              <p>Les crous vous proposent des logements sociaux sur plusieurs villes françaises.</p>
+              <p>Plusieurs aides pour financer vos études sont proposées.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.caf.fr/">
-                <img src="../assets/caf.jpg" style="width:70px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=feA64wXhbjo">
+                <img src="../assets/calculatrice.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
-                  <span>Aides au logement</span>
+                  <span>Simuler ma bourse</span>
                 </h3>
               </a>
-              <p>La Caisse d'allocations familliales (CAF) s'occupe des aides au logement.</p>
+              <p>Vous pouvez simuler le montant de la bourse.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <router-link to="https://www.pap.fr/">
-                <img src="../assets/pap.png" style="width:70px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=GPXkjtpGCFI">
+                <img src="../assets/erasmus-.png" style="width:90px;height:70px;" />
                 <h3 id="foot">
-                  <span>Chez un particulier</span>
+                  <span>Erasmus +</span>
                 </h3>
-              </router-link>
-              <p>Plusieurs site vous propose la location chez un particulier dont PAP.</p>
+              </a>
+              <p>Aide à la mobilité en Europe.</p>
             </div>
             <div class="col-sm-12 col-md-6">
               <router-link to="/FAQ">
@@ -60,7 +63,7 @@
           <a href="#">
             <img src="../assets/fb.png" style="width:50px;height:50px;" />
           </a>
-          <a href="#">
+          <a href="#/Level4">
             <img src="../assets/twitter.png" style="width:50px;height:50px;" />
           </a>
           <a href="#">
@@ -85,15 +88,10 @@ export default {
       slide: 0,
       sliding: null
     };
-  }
-  // methods: {
-  //   onSlideStart(slide) {
-  //     this.sliding = true;
-  //   },
-  //   onSlideEnd(slide) {
-  //     this.sliding = false;
-  //   }
-  // }
+  },
+  finished: () => {
+        this.router.push("#");
+    },
 };
 </script>
 

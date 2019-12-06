@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+    <div class="countdown">
+            <circular-count-down-timer :initial-value="140" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
     <!-- image slider -->
     <div >
       <b-carousel
@@ -13,7 +16,13 @@
           <template v-slot:img>
             <img src="../assets/help.jpg" />
             <div id="caption" class="carousel-caption">
-              <h1 class="display-2">HereToHelp</h1>
+              <h1 class="display-2">Here
+                <a v-if="counter == 2" v-on:click="counter += 1">
+                  Two
+                </a>
+                Help</h1>
+              <button type="button" class="btn btn-outline-dark btn-lg btn-light">Se connecter</button>
+              <button type="button" class="btn btn-primary btn-lg">S'inscrire</button>
             </div>
           </template>
         </b-carousel-slide>
@@ -24,16 +33,19 @@
     <div class="container-fluid">
       <div id="jumb" class="row jumbotron">
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <p class="lead">HereToHelp organise votre vie de zero à 
-            <router-link to="/Level1">
-            un.
-            </router-link>
+          <p class="lead">HereToHelp organise votre vie de
+            <a v-if="counter == 0" v-on:click="counter += 1">
+             zero 
+             </a>
+             à
+             <a v-if="counter == 1" v-on:click="counter += 1"> 
+             un.
+             </a>
             </p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-          <a href="#">
-            <button id="reg" type="button" class="btn btn-outline-secondary btn-lg">rejoignez nous</button>
-          </a>
+          <button v-if="counter == 4" v-on:click="counter += 1" class="btn btn-outline-secondary btn-lg">Four more infos</button>
+          <button v-else class="btn btn-outline-secondary btn-lg"> Rejoigner nous </button>
         </div>
       </div>
     </div>
@@ -42,11 +54,19 @@
     <div class="container-fluid padding">
       <div class="row welcome text-center">
         <div class="col-12">
-          <h1 class="display-4">HereToHelp</h1>
+          <h1 class="display-4">Niveau 
+            <a v-if="counter == 5" href="#/Level6">   
+            5
+            </a>
+            </h1>
         </div>
         <hr />
         <div class="col-12">
-          <p class="lead">Besoin d'aide ? Nous sommes là pour vous !</p>
+          <p class="lead">Besoin d'aide ? On ordonne ta vie pour 
+            <a v-if="counter == 3" v-on:click="counter += 1">
+            trois !
+            </a>
+            </p>
         </div>
       </div>
     </div>
@@ -126,18 +146,14 @@
 export default {
   data() {
     return {
+      counter: 0,
       slide: 0,
       sliding: null
     };
-  }
-  // methods: {
-  //   onSlideStart(slide) {
-  //     this.sliding = true;
-  //   },
-  //   onSlideEnd(slide) {
-  //     this.sliding = false;
-  //   }
-  // }
+  },
+  finished: () => {
+        this.router.push("#");
+    }
 };
 </script>
 

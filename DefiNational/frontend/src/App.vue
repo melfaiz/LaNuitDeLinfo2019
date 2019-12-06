@@ -1,12 +1,8 @@
 <template>
   <div id="app">
-
     <Nav msg="Nav" />
       <router-view></router-view>
     <Footer msg="Footer" />
-
-    <router-link to="/player">easter egg</router-link>
-    <router-link to="/club">easter egg 2</router-link>
   </div>
 </template>
 
@@ -16,6 +12,11 @@ import Footer from "./components/Footer.vue";
 
 export default {
   name: "app",
+  data() {
+    return {
+      level: 0
+    }
+  },
   components: {
     Nav, Footer
   }

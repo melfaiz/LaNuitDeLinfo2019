@@ -1,7 +1,10 @@
 <template>
   <div class="hello">
+    <div class="countdown">
+            <circular-count-down-timer :initial-value="180" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
     <!-- image slider -->
-    <div >
+    <div>
       <b-carousel
         id="carousel-1"
         v-model="slide"
@@ -14,21 +17,23 @@
             <img src="../assets/help.jpg" />
             <div id="caption" class="carousel-caption">
               <h1 class="display-2">HereToHelp</h1>
+              <h3 id="head-c">Plus jamais du temps à perdre</h3>
+              <button type="button" class="btn btn-outline-dark btn-lg btn-light">Se connecter</button>
+              <button type="button" class="btn btn-primary btn-lg">S'inscrire</button>
             </div>
           </template>
         </b-carousel-slide>
-        </b-carousel>
+      </b-carousel>
     </div>
 
     <!-- Jumbotron -->
     <div class="container-fluid">
       <div id="jumb" class="row jumbotron">
         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
-          <p class="lead">HereToHelp organise votre vie de zero à 
-            <router-link to="/Level1">
-            un.
-            </router-link>
-            </p>
+          <p class="lead">
+            HereToHelp organise votre vie de zero à
+            <router-link to="/Level1">un.</router-link>
+          </p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
           <a href="#">
@@ -42,11 +47,15 @@
     <div class="container-fluid padding">
       <div class="row welcome text-center">
         <div class="col-12">
-          <h1 class="display-4">HereToHelp</h1>
+          <h1 class="display-4">
+            Do you know Frère Jacques?
+            <a>♫</a>
+          </h1>
+          <h3>remember birds can sing</h3>
         </div>
         <hr />
         <div class="col-12">
-          <p class="lead">Besoin d'aide ? Nous sommes là pour vous !</p>
+          <p class="lead">Look where you can play me !</p>
         </div>
       </div>
     </div>
@@ -101,21 +110,46 @@
           <h2>Connect</h2>
         </div>
         <div class="col-12 social padding">
-          <a href="#">
+          <a
+            @click.prevent="playSound(require('../sounds/do.mp3'))"
+            v-on:click="song=song+'do';note++;"
+          >
             <img src="../assets/fb.png" style="width:50px;height:50px;" />
           </a>
-          <a href="#">
+          <a
+            @click.prevent="playSound(require('../sounds/re.mp3'))"
+            v-on:click="song=song+'re';note++;"
+          >
             <img src="../assets/twitter.png" style="width:50px;height:50px;" />
           </a>
-          <a href="#">
+          <a
+            @click.prevent="playSound(require('../sounds/mi.mp3'))"
+            v-on:click="song=song+'mi';note++;"
+          >
             <img src="../assets/instagram.png" style="width:50px;height:50px;" />
           </a>
-          <a href="#">
+          <a
+            @click.prevent="playSound(require('../sounds/fa.mp3'))"
+            v-on:click="song=song+'fa';note++;"
+          >
             <img src="../assets/google.png" style="width:50px;height:50px;" />
           </a>
-          <a href="#">
+          <a
+            @click.prevent="playSound(require('../sounds/sol.mp3'))"
+            v-on:click="song=song+'sol';note++;"
+          >
             <img src="../assets/youtube.png" style="width:50px;height:50px;" />
           </a>
+          <a
+            v-if="song == 'doremidodoremidomifasolmifasol'"
+            class="btn btn-outline-dark btn-lg btn-light"
+            href="#/level7"
+          >On passe le niveau</a>
+          <a
+            v-if="note>0"
+            class="btn btn-outline-dark btn-lg btn-light"
+            v-on:click="note=0; song=''"
+          >Reset</a>
         </div>
       </div>
     </div>
@@ -127,17 +161,22 @@ export default {
   data() {
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
+      song: "",
+      note: 0
     };
+  },
+  finished: () => {
+        this.router.push("#");
+    },
+  methods: {
+    playSound(sound) {
+      if (sound) {
+        var audio = new Audio(sound);
+        audio.play();
+      }
+    }
   }
-  // methods: {
-  //   onSlideStart(slide) {
-  //     this.sliding = true;
-  //   },
-  //   onSlideEnd(slide) {
-  //     this.sliding = false;
-  //   }
-  // }
 };
 </script>
 

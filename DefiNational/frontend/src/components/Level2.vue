@@ -4,13 +4,23 @@
     <!-- Three Column Section -->
     <div>
         <b>
-          <p id="sante">Besoin d'aide pour touver un logement ou pour recevoir les aides ?</p>
+          <p>Combien y a-t-il d'habitants dans cette chambre ?</p>
         </b>
+        <div class="col-md-12" style="margin-left:40%">
+        <b-form-input v-model="text" placeholder="Entrer votre réponse" style="width:200px;" align="center">
+        </b-form-input>
+        </div>
+          <div v-if="text == 8">
+            Cliquez 
+            <a href="#/Level3">
+            ici
+            </a>
+          </div>
 
         <div class="container-fluid padding balls">
           <div class="row text-center padding" id="types">
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.etudiant.gouv.fr/">
+              <a href="https://www.youtube.com/watch?v=4Js-XbNj6Tk">
                 <img src="../assets/logo-crous.jpg" style="width:80px;height:70px;" />
                 <h3 id="foot">
                   <span>Logement social</span>
@@ -19,7 +29,7 @@
               <p>Les crous vous proposent des logements sociaux sur plusieurs villes françaises.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.caf.fr/">
+              <a href="https://www.youtube.com/watch?v=feA64wXhbjo">
                 <img src="../assets/caf.jpg" style="width:70px;height:70px;" />
                 <h3 id="foot">
                   <span>Aides au logement</span>
@@ -28,12 +38,12 @@
               <p>La Caisse d'allocations familliales (CAF) s'occupe des aides au logement.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <router-link to="https://www.pap.fr/">
+              <a href="https://www.youtube.com/watch?v=GPXkjtpGCFI">
                 <img src="../assets/pap.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
                   <span>Chez un particulier</span>
                 </h3>
-              </router-link>
+              </a>
               <p>Plusieurs site vous propose la location chez un particulier dont PAP.</p>
             </div>
             <div class="col-sm-12 col-md-6">
@@ -83,7 +93,8 @@ export default {
   data() {
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
+      text: ""
     };
   }
   // methods: {

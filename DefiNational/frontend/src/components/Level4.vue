@@ -1,5 +1,17 @@
 <template>
-  <div id="app"><VueFaqAccordion :items="myItems" /></div>
+
+  <div id="app"><VueFaqAccordion :items="myItems" />
+  <div class="countdown">
+            <circular-count-down-timer :initial-value="90" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
+
+  <div id="app">
+    <p><button v-on:click="counter += 1">Passer Ce Niveau</button></p>
+  </div>
+  <div v-if="counter == 5">
+    Voir dans la séction transport.
+  </div>
+  </div>
 </template>
 
 <script>
@@ -10,13 +22,17 @@ export default {
   components: {
     VueFaqAccordion
   },
+  finished: () => {
+        this.router.push("#");
+  },
   data() {
     return {
+      counter:0,
       myItems: [
         {
-          title: "Qui contacté pour avoir droits aux aides au logement ?",
+          title: "Qui contacté pour passer ce niveau ?",
           value:
-            "La CAF est la caisse chargée des aides au logement. Pour y accéder, cliquez <a href=\"http://www.caf.fr/\"> ici </a>",
+            "Cliquez sur le bouton 'passer le niveau' 5 fois.",
           category: "Logement"
         },
         {
@@ -30,12 +46,6 @@ export default {
           value:
             "La CAF a créé un simulateur auquel vous pouvez accéder par <a href=\"http://www.caf.fr/allocataires/mes-services-en-ligne/faire-une-simulation\"> ici </a>",
           category: "Logement"
-        },
-        {
-          title: "Que-ce qu'une complémentaire santé ?",
-          value:
-            "En France, l'assurance maladie complémentaire (AMC), ou complémentaire santé, est un système d'assurance maladie qui complète celui de la Sécurité sociale en intervenant sous forme d'un complément de remboursement des soins.",
-          category: "Santé"
         },
         {
           title: "Que-ce qu'une complémentaire santé ?",
@@ -111,6 +121,12 @@ export default {
           title: "Qu'est ce que la tarifaction solidaire ?",
           value:
             "La Carte Solidaire permet de bénéficier jusqu'à 80% de réduction sur les trajets en trains et cars régionaux. Pour la Nouvelle Aquitaine, visitez <a href=\"https://transports.nouvelle-aquitaine.fr/fr/actualite/nouveau-tarif-solidaire-pour-trajets-en-trains-cars-regionaux\"> ce site </a>",
+          category: "Transport"
+        },
+        {
+          title: "Comment passer ce niveau ?",
+          value:
+            "Il suffit de cliquer <a href=\"#/Level5/\"> ici </a> ",
           category: "Transport"
         }
       ]

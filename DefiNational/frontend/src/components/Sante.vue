@@ -1,20 +1,53 @@
 <template>
-  <div class="hello">
+  <div>
 
     <!-- Three Column Section -->
-    <div class="container-fluid padding balls">
-      <div class="row text-center padding" id="types">
-        <div class="col-sm-12 col-md-6">
-          <a href="#">
-            <img src="../assets/health.png" style="width:80px;height:70px;" />
-            <h3 id="foot">
-              <span>Santé</span>
-            </h3>
-          </a>
-          <p>Votre santé est notre priorité.</p>
-        </div>
-      </div>
+    <div>
+        <b>
+          <p id="sante">Votre santé est notre priorité.</p>
+        </b>
+
+        <div class="container-fluid padding balls">
+          <div class="row text-center padding" id="types">
+            <div class="col-sm-12 col-md-6">
+              <a href="https://www.chu-bordeaux.fr/">
+                <img src="../assets/chu.png" style="width:120px;height:70px;" />
+                <h3 id="foot">
+                  <span>Centres Hospitaliers Universitaires</span>
+                </h3>
+              </a>
+              <p>Les CHUs sont des centres d'hospitalisation à votre disposition.</p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <a href="https://www.caf.fr/">
+                <img src="../assets/ameli.png" style="width:70px;height:70px;" />
+                <h3 id="foot">
+                  <span>CMU</span>
+                </h3>
+              </a>
+              <p>Ameli vous propose un programme CMU pour vous aider.</p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <a href="https://www.etudiant.gouv.fr/cid114047/complementaire-sante-mutuelles.html">
+                <img src="../assets/health.png" style="width:70px;height:70px;" />
+                <h3 id="foot">
+                  <span>Complémentaire santé solidaire</span>
+                </h3>
+              </a>
+              <p>Un complémentaire à la sécurité sociale.</p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <router-link to="/FAQ">
+                <img src="../assets/question.png" style="width:70px;height:70px;" />
+                <h3 id="foot">
+                  <span>Autres questions</span>
+                </h3>
+              </router-link>
+              <p>Notre FAQ est riche d'informations.</p>
+            </div>
+          </div>
       <hr class="my-4" />
+    </div>
     </div>
 
     <!-- connect -->
@@ -159,5 +192,17 @@ a {
 
 .btn-secondary {
   border: 1px solid #3c007a;
+}
+
+#sante{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 200%;
+  text-align: center;
+}
+
+#parag{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  text-align: start;
 }
 </style>
