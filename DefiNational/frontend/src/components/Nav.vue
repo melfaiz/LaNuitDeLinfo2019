@@ -11,15 +11,8 @@
           />
           </router-link>
         </a>
-        <button
-          class="navbat-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
+          <template>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="#">Home</a>
@@ -30,16 +23,47 @@
             <li class="nav-item active">
               <router-link to="/FAQ" class="nav-link">FAQ</router-link>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active" v-if="user.loggedIn==true">
               <a class="nav-link" href="#">Profil</a>
             </li>
+            <!-- <template>
+              <li class="nav-item active">
+               <a class="nav-link" href="#/Login">Se connecter</a>
+             </li>
+             <li class="nav-item active">
+               <a class="nav-link" href="#/Register">S'enregistrer</a>
+             </li>
+            </template> -->
           </ul>
+          </template>
         </div>
       </div>
     </nav>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import firebase from "firebase";
+export default {
+  computed: {
+    ...mapGetters({
+// map `this.user` to `this.$store.getters.user`
+      user: "user"
+    })
+  },
+  methods: {
+    signOut() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace({
+            name: "home"
+          });
+        });
+    }
+  }
+};
 </script>
 
 <style>

@@ -4,37 +4,47 @@
     <!-- Three Column Section -->
     <div>
         <b>
-          <p id="sante">On vous accompagne le long de votre parcours.</p>
+          <p>Combien y a-t-il d'habitants dans cette chambre ?</p>
         </b>
+        <div class="col-md-12" style="margin-left:40%">
+        <b-form-input v-model="text" placeholder="Entrer votre réponse" style="width:200px;" align="center">
+        </b-form-input>
+        </div>
+          <div v-if="text == 10">
+            Cliquez 
+            <a href="#/Level3">
+            ici
+            </a>
+          </div>
 
         <div class="container-fluid padding balls">
           <div class="row text-center padding" id="types">
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.etudiant.gouv.fr/">
-                <img src="../assets/logo-mse.png" style="width:120px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=4Js-XbNj6Tk">
+                <img src="../assets/logo-crous.jpg" style="width:80px;height:70px;" />
                 <h3 id="foot">
-                  <span>Différentes aides</span>
+                  <span>Logement social</span>
                 </h3>
               </a>
-              <p>Plusieurs aides pour financer vos études sont proposées.</p>
+              <p>Les crous vous proposent des logements sociaux sur plusieurs villes françaises.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://simulateur.lescrous.fr/">
-                <img src="../assets/calculatrice.png" style="width:70px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=feA64wXhbjo">
+                <img src="../assets/caf.jpg" style="width:70px;height:70px;" />
                 <h3 id="foot">
-                  <span>Simuler ma bourse</span>
+                  <span>Aides au logement</span>
                 </h3>
               </a>
-              <p>Vous pouvez simuler le montant de la bourse.</p>
+              <p>La Caisse d'allocations familliales (CAF) s'occupe des aides au logement.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://info.erasmusplus.fr/">
-                <img src="../assets/erasmus-.png" style="width:90px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=GPXkjtpGCFI">
+                <img src="../assets/pap.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
-                  <span>Erasmus +</span>
+                  <span>Chez un particulier</span>
                 </h3>
               </a>
-              <p>Aide à la mobilité en Europe.</p>
+              <p>Plusieurs site vous propose la location chez un particulier dont PAP.</p>
             </div>
             <div class="col-sm-12 col-md-6">
               <router-link to="/FAQ">
@@ -83,7 +93,8 @@ export default {
   data() {
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
+      text: ""
     };
   }
   // methods: {

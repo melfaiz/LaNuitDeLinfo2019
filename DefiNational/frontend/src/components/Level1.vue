@@ -4,48 +4,53 @@
     <!-- Three Column Section -->
     <div>
         <b>
-          <p id="sante">On vous accompagne le long de votre parcours.</p>
+          <p id="sante">Sélectionner toute votre santé.</p>
         </b>
 
         <div class="container-fluid padding balls">
           <div class="row text-center padding" id="types">
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.etudiant.gouv.fr/">
-                <img src="../assets/logo-mse.png" style="width:120px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=4Js-XbNj6Tk">
+                <img src="../assets/chu.png" style="width:120px;height:70px;" />
                 <h3 id="foot">
-                  <span>Différentes aides</span>
+                  <span>Centres Hospitaliers Universitaires</span>
                 </h3>
               </a>
-              <p>Plusieurs aides pour financer vos études sont proposées.</p>
+              <p>Les CHUs sont des centres d'hospitalisation à votre disposition.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://simulateur.lescrous.fr/">
-                <img src="../assets/calculatrice.png" style="width:70px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=feA64wXhbjo">
+                <img src="../assets/ameli.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
-                  <span>Simuler ma bourse</span>
+                  <span>CMU</span>
                 </h3>
               </a>
-              <p>Vous pouvez simuler le montant de la bourse.</p>
+              <p>Ameli vous propose un programme CMU pour vous aider.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://info.erasmusplus.fr/">
-                <img src="../assets/erasmus-.png" style="width:90px;height:70px;" />
+              <a href="https://www.youtube.com/watch?v=GPXkjtpGCFI">
+                <img src="../assets/health.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
-                  <span>Erasmus +</span>
+                  <span>Complémentaire santé solidaire</span>
                 </h3>
               </a>
-              <p>Aide à la mobilité en Europe.</p>
+              <p>Un complémentaire à la sécurité sociale.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <router-link to="/FAQ">
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
                 <img src="../assets/question.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
                   <span>Autres questions</span>
                 </h3>
-              </router-link>
+              </a>
               <p>Notre FAQ est riche d'informations.</p>
             </div>
           </div>
+        <div>
+            <a href="#/Level2" id="hidden">
+            Press Here.
+            </a>
+        </div>
       <hr class="my-4" />
     </div>
     </div>
@@ -204,5 +209,9 @@ a {
   font-family:Arial, Helvetica, sans-serif;
   font-size: 100%;
   text-align: start;
+}
+
+#hidden{
+  color:white;
 }
 </style>
