@@ -16,7 +16,7 @@
    </div>
     <div v-if="text == 19">
             Cliquez 
-    <a href="#/Level8">
+    <a href="#/404">
             ici
     </a>
     </div>

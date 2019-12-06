@@ -53,7 +53,6 @@ export default {
           seen: this.discussionsTable.rows[i].seen
         });
       }
-      console.log(this.discussionsToShow);
     }
   },
   watch: {

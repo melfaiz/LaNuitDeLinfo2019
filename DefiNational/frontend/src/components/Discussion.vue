@@ -122,7 +122,6 @@ export default {
         value: user_Table.data.xp
       });
     }
-    console.log(this.repliesToShow);
   }
 };
 </script>
