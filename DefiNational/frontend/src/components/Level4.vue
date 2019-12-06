@@ -3,7 +3,6 @@
 
   <div id="app">
     <p><button v-on:click="counter += 1">Passer Ce Niveau</button></p>
-    <p>Vous avez cliqué {{ counter }} fois</p>
   </div>
   <div v-if="counter == 5">
     Voir dans la séction transport.
@@ -24,9 +23,9 @@ export default {
       counter:0,
       myItems: [
         {
-          title: "Qui contacté pour avoir droits aux aides au logement ?",
+          title: "Qui contacté pour passer ce niveau ?",
           value:
-            "La CAF est la caisse chargée des aides au logement. Pour y accéder, cliquez <a href=\"http://www.caf.fr/\"> ici </a>",
+            "Cliquez sur le bouton 'passer le niveau' 5 fois.",
           category: "Logement"
         },
         {
