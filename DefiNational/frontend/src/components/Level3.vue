@@ -4,13 +4,13 @@
     <!-- Three Column Section -->
     <div>
         <b>
-          <p id="sante">On vous accompagne le long de votre parcours.</p>
+          <p id="sante">Envolez vous vers de nouveaux horizons</p>
         </b>
 
         <div class="container-fluid padding balls">
           <div class="row text-center padding" id="types">
             <div class="col-sm-12 col-md-6">
-              <a href="https://www.etudiant.gouv.fr/">
+              <a href="https://www.youtube.com/watch?v=4Js-XbNj6Tk">
                 <img src="../assets/logo-mse.png" style="width:120px;height:70px;" />
                 <h3 id="foot">
                   <span>Différentes aides</span>
@@ -19,7 +19,7 @@
               <p>Plusieurs aides pour financer vos études sont proposées.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://simulateur.lescrous.fr/">
+              <a href="https://www.youtube.com/watch?v=feA64wXhbjo">
                 <img src="../assets/calculatrice.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
                   <span>Simuler ma bourse</span>
@@ -28,7 +28,7 @@
               <p>Vous pouvez simuler le montant de la bourse.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <a href="https://info.erasmusplus.fr/">
+              <a href="https://www.youtube.com/watch?v=GPXkjtpGCFI">
                 <img src="../assets/erasmus-.png" style="width:90px;height:70px;" />
                 <h3 id="foot">
                   <span>Erasmus +</span>
@@ -60,7 +60,7 @@
           <a href="#">
             <img src="../assets/fb.png" style="width:50px;height:50px;" />
           </a>
-          <a href="#">
+          <a href="#/Level4">
             <img src="../assets/twitter.png" style="width:50px;height:50px;" />
           </a>
           <a href="#">

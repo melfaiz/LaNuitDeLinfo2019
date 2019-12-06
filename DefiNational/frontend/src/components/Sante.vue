@@ -28,12 +28,12 @@
               <p>Ameli vous propose un programme CMU pour vous aider.</p>
             </div>
             <div class="col-sm-12 col-md-6">
-              <router-link to="https://www.etudiant.gouv.fr/cid114047/complementaire-sante-mutuelles.html">
+              <a href="https://www.etudiant.gouv.fr/cid114047/complementaire-sante-mutuelles.html">
                 <img src="../assets/health.png" style="width:70px;height:70px;" />
                 <h3 id="foot">
                   <span>Complémentaire santé solidaire</span>
                 </h3>
-              </router-link>
+              </a>
               <p>Un complémentaire à la sécurité sociale.</p>
             </div>
             <div class="col-sm-12 col-md-6">

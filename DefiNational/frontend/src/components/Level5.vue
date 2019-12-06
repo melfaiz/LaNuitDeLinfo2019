@@ -45,7 +45,7 @@
     <div class="container-fluid padding">
       <div class="row welcome text-center">
         <div class="col-12">
-          <h1 class="display-4">Niveau 0</h1>
+          <h1 class="display-4">Niveau 5</h1>
         </div>
         <hr />
         <div class="col-12">
