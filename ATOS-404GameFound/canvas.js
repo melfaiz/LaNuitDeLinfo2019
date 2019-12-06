@@ -193,14 +193,14 @@ function showScores(){
     });
     (async () => {
       const {value: formValues} = await Swal.fire({
-       title: 'Congratulations!',
+       title: 'Game over!',
        html:
          '<h4 type="number">Score: '+ scoreToSend +' </h4>' +
          '<h4 type="number">Best score: '+ max +' </h4>' +
-         '<h2> General: </h2>' +
-         '<h4> 1st: name: '+ rr[res[0]].username +'  score : '+ rr[res[0]].score +' </h4>' +
-         '<h4> 2nd: name: '+ rr[res[1]].username +'  score : '+ rr[res[1]].score +' </h4>' +
-         '<h4> 3rd: name: '+ rr[res[2]].username +'  score : '+ rr[res[2]].score +' </h4>'+
+         '<h2> Score board: </h2>' +
+         '<h4> 1st => '+ rr[res[0]].username +'.  score : '+ rr[res[0]].score +' </h4>' +
+         '<h4> 2nd => '+ rr[res[1]].username +'.  score : '+ rr[res[1]].score +' </h4>' +
+         '<h4> 3rd => '+ rr[res[2]].username +'.  score : '+ rr[res[2]].score +' </h4>'+
          '<button class="share button" type="button" onclick="showLoginMenu()"> share your score </button>',
        focusConfirm: false,
        showConfirmButton: false,
