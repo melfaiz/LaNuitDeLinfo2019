@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import CircularCountDownTimer from "vue-circular-count-down-timer";
 
 import Home from '../components/Home.vue'
 import Player from '../components/Player.vue'
@@ -21,8 +22,8 @@ import Register from '../components/Register.vue'
 import Dashboard from '../components/Dashboard.vue'
 
 
-
-
+Vue.use(Router);
+Vue.use(CircularCountDownTimer);
 
 
 Vue.use(Router)
