@@ -18,14 +18,28 @@
               <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Chat</a>
-            </li>
-            <li class="nav-item active">
               <router-link to="/FAQ" class="nav-link">FAQ</router-link>
             </li>
-            <li class="nav-item active" v-if="user.loggedIn==true">
-              <a class="nav-link" href="#">Profil</a>
+            <li class="nav-item active">
+              <router-link to="/Forum" class="nav-link">Forum</router-link>
             </li>
+            <template v-if="user.loggedIn">
+               <div class="nav-item">{{user.data.displayName}}</div>
+               <li class="nav-item active">
+                <a class="nav-link" href="#/Dashboard">Profil</a>
+              </li>
+               <li class="nav-item active">
+                <a class="nav-link" @click.prevent="signOut">Se déconnecter</a>
+              </li>
+             </template>
+             <template v-else>
+               <li class="nav-item active">
+                <a class="nav-link" href="#/Login">Se connecter</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#/Register">S'enregistrer</a>
+              </li>
+             </template>
             <!-- <template>
               <li class="nav-item active">
                <a class="nav-link" href="#/Login">Se connecter</a>
