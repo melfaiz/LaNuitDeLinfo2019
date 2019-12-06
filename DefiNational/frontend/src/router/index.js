@@ -14,6 +14,7 @@ import Level2 from '../components/Level2.vue'
 import Level3 from '../components/Level3.vue'
 import Level4 from '../components/Level4.vue'
 import Level5 from '../components/Level5.vue'
+import Level6 from '../components/Level6.vue'
 import Level7 from '../components/Level7.vue'
 
 
@@ -35,6 +36,7 @@ export default new Router({
         {path: '/Level3', name: 'Level3', component: Level3 },
         {path: '/Level4', name: 'Level4', component: Level4 },
         {path: '/Level5', name: 'Level5', component: Level5 },
+        {path: '/Level6', name: 'Level6', component: Level6 },
         {path: '/Level7', name: 'Level7', component: Level7 },
 
 
