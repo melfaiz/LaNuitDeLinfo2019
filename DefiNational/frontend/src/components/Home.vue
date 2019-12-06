@@ -14,9 +14,8 @@
             <img src="../assets/help.jpg" />
             <div id="caption" class="carousel-caption">
               <h1 class="display-2">HereToHelp</h1>
-              <h3 id="head-c">Plus jamais du temps à perdre</h3>
-              <button type="button" class="btn btn-outline-dark btn-lg btn-light">Se connecter</button>
-              <button type="button" class="btn btn-primary btn-lg">S'inscrire</button>
+              <button type="button" class="btn btn-outline-dark btn-lg btn-light" href="#/Login">Se connecter</button>
+              <button type="button" class="btn btn-primary btn-lg" href="#Register">S'inscrire</button>
             </div>
           </template>
         </b-carousel-slide>

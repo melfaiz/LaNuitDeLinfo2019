@@ -18,7 +18,6 @@
                   Two
                 </a>
                 Help</h1>
-              <h3 id="head-c">Plus jamais de temps à perdre</h3>
               <button type="button" class="btn btn-outline-dark btn-lg btn-light">Se connecter</button>
               <button type="button" class="btn btn-primary btn-lg">S'inscrire</button>
             </div>

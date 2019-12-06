@@ -15,6 +15,12 @@ import Level3 from '../components/Level3.vue'
 import Level4 from '../components/Level4.vue'
 import Level5 from '../components/Level5.vue'
 import Level7 from '../components/Level7.vue'
+import Login from '../components/Login.vue'
+import Register from '../components/Register.vue'
+import Dashboard from '../components/Dashboard.vue'
+
+
+
 
 
 
@@ -36,7 +42,8 @@ export default new Router({
         {path: '/Level4', name: 'Level4', component: Level4 },
         {path: '/Level5', name: 'Level5', component: Level5 },
         {path: '/Level7', name: 'Level7', component: Level7 },
-
-
+        {path: '/Login', name: 'Login', component: Login },
+        {path: '/Register', name: 'Register', component: Register },
+        {path: '/Dashboard', name: 'Dashboard', component: Dashboard },
     ]
 })
