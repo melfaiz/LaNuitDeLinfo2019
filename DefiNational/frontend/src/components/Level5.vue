@@ -42,9 +42,8 @@
             </p>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
-          <a href="#">
-            <button v-if="counter == 4" v-on:click="counter += 1">Four more infos</button>
-          </a>
+          <button v-if="counter == 4" v-on:click="counter += 1" class="btn btn-outline-secondary btn-lg">Four more infos</button>
+          <button v-else class="btn btn-outline-secondary btn-lg"> Rejoigner nous </button>
         </div>
       </div>
     </div>
