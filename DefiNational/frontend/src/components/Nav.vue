@@ -28,7 +28,7 @@
               <a class="nav-link" href="#">Chat</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">FAQ</a>
+              <router-link to="/FAQ" class="nav-link">FAQ</router-link>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Profil</a>

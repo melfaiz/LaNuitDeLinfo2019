@@ -4,9 +4,6 @@
     <Nav msg="Nav" />
       <router-view></router-view>
     <Footer msg="Footer" />
-
-    <router-link to="/player">easter egg</router-link>
-    <router-link to="/club">easter egg 2</router-link>
   </div>
 </template>
 

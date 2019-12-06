@@ -1,14 +1,26 @@
-        * { 
-            padding: 0;
-            margin: 0; 
-            background-color: #7d7d7d;
-          }
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #7d7d7d;
+}
 
-        canvas { 
-            background: #eee;
-            display: block;
-            margin: 0 auto;
-             }
+canvas {
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+}
 
-
+.button{
+  padding: 12px;
+    margin: 10px;
+    border-radius: 6px;
+    background: #00b7ff;
+    border: none;
+    color: white;
+}
+.button:hover {
+  background: #66cef7;
+}
+.button:active {
+  background: #0383b6;
 }

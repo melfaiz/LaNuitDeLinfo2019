@@ -1,5 +1,3 @@
-
-
 function distance(a, b) {
   return Math.abs(a - b);
 }
@@ -136,17 +134,17 @@ function scoreball() {
 
 function menu() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.font = "40px Arial";
+  ctx.font = "30px Arial";
   ctx.textAlign = "center";
 
   ctx.fillStyle = "#7d7d7d ";
-  ctx.fillText("DON'T TOUCH", W / 2, 70);
-  ctx.fillText("THE SPIKES", W / 2, 110);
+  ctx.fillText("404 PAGE NOT FOUND ", W / 2, 70);
+  ctx.fillText("START A GAME INSTEAD", W / 2, 110);
 
   ctx.font = "20px Arial";
   ctx.fillStyle = "#ff0e67";
-  ctx.fillText("APPUYEZ", W / 2, 180);
-  ctx.fillText("POUR SAUTER", W / 2, 200);
+  ctx.fillText("PRESS ESPACE", W / 2, 180);
+  ctx.fillText("TO JUMP", W / 2, 200);
 
   ctx.beginPath();
   ctx.arc(W / 2, H / 2, 80, 0, Math.PI * 2);
@@ -183,12 +181,98 @@ function animate() {
   }
   requestAnimationFrame(animate);
 }
+
+function showScores(){
+  disableListners()
+  var res;
+  firebase.database().ref("users/").once("value", function(snapchot){
+    var rr = snapchot.val();
+    
+    res = Object.keys(rr).sort(function(a, b){
+      return rr[b].score - rr[a].score;
+    });
+    (async () => {
+      const {value: formValues} = await Swal.fire({
+       title: 'Congratulations!',
+       html:
+         '<h4 type="number">Score: '+ scoreToSend +' </h4>' +
+         '<h4 type="number">Best score: '+ max +' </h4>' +
+         '<h2> General: </h2>' +
+         '<h4> 1st: name: '+ rr[res[0]].username +'  score : '+ rr[res[0]].score +' </h4>' +
+         '<h4> 2nd: name: '+ rr[res[1]].username +'  score : '+ rr[res[1]].score +' </h4>' +
+         '<h4> 3rd: name: '+ rr[res[2]].username +'  score : '+ rr[res[2]].score +' </h4>'+
+         '<button class="share button" type="button" onclick="showLoginMenu()"> share your score </button>',
+       focusConfirm: false,
+       showConfirmButton: false,
+       showCancelButton: false,
+        
+     });
+     })();
+
+  });
+}
+
+function showLoginMenu(){
+  (async () => {
+    
+    const {value: formValues} = await Swal.fire({
+     title: 'Log in',
+     html:
+       '<input id="login-input-email" class="swal2-input" type="email" placeholder="Enter your email">' +
+       '<input id="login-input-password" class="swal2-input" type="password" placeholder="Entrez votre mot de passe">'+
+       '<button class="login button" type="button" onclick="signIn()"> LogIn </button>'+
+       '<button class="login button" type="button"  onclick="showSingUpMenu()"> Sign Up </button>',
+     focusConfirm: false,
+     showConfirmButton: false,
+     showCancelButton: false,
+
+     
+   });
+  })();
+}
+/*
+function showSingInUP(){
+  (async () => {
+    const a = await Swal.fire({
+      title: "Welcome!",
+      html:
+        '<button class="login button" type="button" onclick="showLoginMenu()"> Log In </button>' +
+        '<button class="signin button" type="button" onclick="showSingUpMenu()"> Sign Up </button>',
+      focusConfirm: false,
+      showConfirmButton: false,
+      showCancelButton: false
+    });
+  })();
+}*/
+
+
+function showSingUpMenu(){
+  (async () => {
+    const { value: formValues } = await Swal.fire({
+      title: "Sign Up",
+      html:
+        '<input id="signup-input-pseudo" class="swal2-input" type="text" placeholder="Enter your username">' +
+        '<input id="signup-input-email" class="swal2-input" type="email" placeholder="Enter your email">' +
+        '<input id="signup-input-password" class="swal2-input" type="password" placeholder="Enter your password">' +
+        '<button class="signin button" type="button" onclick="signUp()"> Sign Up </button>',
+      focusConfirm: false,
+      showConfirmButton: false,
+      showCancelButton: false
+      
+    });
+  })();
+}
+
+
 function lost() {
-  
+  disableListners();
   lostf();
-  window.alert("YOU LOST \nPLAY AGAIN");
+
+  showScores();
+
   gameon = false;
   scoremax();
+  scoreToSend  = score;
   score = 0;
   bird.x = W / 2 - 50;
   bird.y = H / 2 - 10;
@@ -263,6 +347,7 @@ function bottomspikes() {
 function scoremax() {
   if (score > max) {
     max = score;
+    localStorage.maxScore = max;
   }
 }
 function sound(src) {
@@ -280,38 +365,32 @@ function sound(src) {
   };
 }
 
+function generate(lvl) {
+  var M = [];
+  var r = random(50, H - 50, H / 2, 0);
+  M.push(r);
 
+  while (M.length < lvl) {
+    var overl = false;
+    var r = random(50, H - 50, H / 2, 0);
+    for (var j = 0; j < M.length; j++) {
+      var v = M[j];
 
-
-function generate(lvl){
-
-    var M=[];
-    var r = random(50,H-50,H/2,0);
-    M.push(r);
-
-    while(M.length<lvl)
-    {
-        var overl=false;
-        var r = random(50,H-50,H/2,0);
-        for(var j=0; j<M.length; j++){
-              var v = M[j];
-              
-              if (distance(r,v)<=50) {
-                overl=true;  
-              };
-        }
-        if (!overl) {
-          M.push(r);
-        };
-}
-return M;
+      if (distance(r, v) <= 50) {
+        overl = true;
+      }
+    }
+    if (!overl) {
+      M.push(r);
+    }
+  }
+  return M;
 }
 
-
-function random(a,b,p,d){
-var r= a+ Math.random()*(b-a);
-while(distance(r,p)<=d){
-r = a+ Math.random()*(b-a);
-};
-return r
+function random(a, b, p, d) {
+  var r = a + Math.random() * (b - a);
+  while (distance(r, p) <= d) {
+    r = a + Math.random() * (b - a);
+  }
+  return r;
 }
