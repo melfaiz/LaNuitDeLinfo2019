@@ -184,7 +184,7 @@ function animate() {
   requestAnimationFrame(animate);
 }
 function lost() {
-  
+  addScore(score);
   lostf();
   window.alert("YOU LOST \nPLAY AGAIN");
   gameon = false;
