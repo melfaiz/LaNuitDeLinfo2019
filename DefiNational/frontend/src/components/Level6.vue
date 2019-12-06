@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-        <circular-count-down-timer :initial-value="180" size="150" :show-hour="false"></circular-count-down-timer>
+    <div class="countdown">
+            <circular-count-down-timer :initial-value="180" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
     <!-- image slider -->
     <div>
       <b-carousel
@@ -164,6 +166,9 @@ export default {
       note: 0
     };
   },
+  finished: () => {
+        this.router.push("#");
+    },
   methods: {
     playSound(sound) {
       if (sound) {

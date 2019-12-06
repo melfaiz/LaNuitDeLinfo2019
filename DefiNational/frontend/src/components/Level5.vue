@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+    <div class="countdown">
+            <circular-count-down-timer :initial-value="140" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
     <!-- image slider -->
     <div >
       <b-carousel
@@ -147,15 +150,10 @@ export default {
       slide: 0,
       sliding: null
     };
-  }
-  // methods: {
-  //   onSlideStart(slide) {
-  //     this.sliding = true;
-  //   },
-  //   onSlideEnd(slide) {
-  //     this.sliding = false;
-  //   }
-  // }
+  },
+  finished: () => {
+        this.router.push("#");
+    }
 };
 </script>
 

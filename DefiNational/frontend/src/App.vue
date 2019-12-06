@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <Nav msg="Nav" />
       <router-view></router-view>
     <Footer msg="Footer" />
@@ -13,6 +12,11 @@ import Footer from "./components/Footer.vue";
 
 export default {
   name: "app",
+  data() {
+    return {
+      level: 0
+    }
+  },
   components: {
     Nav, Footer
   }

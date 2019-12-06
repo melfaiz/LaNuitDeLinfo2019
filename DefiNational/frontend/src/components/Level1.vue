@@ -1,12 +1,14 @@
 <template>
-  <div>
 
+  <div>
+    <div class="countdown">
+            <circular-count-down-timer :initial-value="40" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
     <!-- Three Column Section -->
     <div>
         <b>
           <p id="sante">Sélectionner toute votre santé.</p>
         </b>
-
         <div class="container-fluid padding balls">
           <div class="row text-center padding" id="types">
             <div class="col-sm-12 col-md-6">
@@ -88,17 +90,13 @@ export default {
   data() {
     return {
       slide: 0,
-      sliding: null
+      sliding: null,
+      text: ""
     };
-  }
-  // methods: {
-  //   onSlideStart(slide) {
-  //     this.sliding = true;
-  //   },
-  //   onSlideEnd(slide) {
-  //     this.sliding = false;
-  //   }
-  // }
+  },
+  finished: () => {
+        this.router.push("#");
+    },
 };
 </script>
 
@@ -214,4 +212,5 @@ a {
 #hidden{
   color:white;
 }
+
 </style>

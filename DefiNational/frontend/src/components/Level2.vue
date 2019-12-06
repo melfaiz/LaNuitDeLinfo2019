@@ -10,7 +10,7 @@
         <b-form-input v-model="text" placeholder="Entrer votre réponse" style="width:200px;" align="center">
         </b-form-input>
         </div>
-          <div v-if="text == 10">
+          <div v-if="text == 8">
             Cliquez 
             <a href="#/Level3">
             ici

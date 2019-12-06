@@ -1,5 +1,9 @@
 <template>
+
   <div id="app"><VueFaqAccordion :items="myItems" />
+  <div class="countdown">
+            <circular-count-down-timer :initial-value="90" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
 
   <div id="app">
     <p><button v-on:click="counter += 1">Passer Ce Niveau</button></p>
@@ -17,6 +21,9 @@ export default {
   name: "App",
   components: {
     VueFaqAccordion
+  },
+  finished: () => {
+        this.router.push("#");
   },
   data() {
     return {
@@ -135,7 +142,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   text-align: center;
 }
 </style>

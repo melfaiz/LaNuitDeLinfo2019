@@ -1,5 +1,12 @@
 <template>
   <div id="app"><VueFaqAccordion :items="myItems" />
+  <div class="countdown">
+            <circular-count-down-timer :initial-value="160" 
+            style="margin-left: 37%" 
+            size="100" 
+            :show-hour="false"
+            @finish="finished"></circular-count-down-timer>
+    </div>
    <b>
       <p>Notre chat-bot est un Know-it-all. Demandez lui ce que vous voulez.</p>
    </b>
@@ -23,7 +30,10 @@ export default {
     return {
       text:"",
     }
-  }
+  },
+  finished: () => {
+        this.router.push("#");
+    }
 };
 </script>
 
@@ -34,7 +44,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   text-align: center;
 }
 </style>

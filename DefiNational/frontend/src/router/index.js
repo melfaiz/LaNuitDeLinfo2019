@@ -3,8 +3,6 @@ import Router from 'vue-router'
 import CircularCountDownTimer from "vue-circular-count-down-timer";
 
 import Home from '../components/Home.vue'
-import Player from '../components/Player.vue'
-import Club from '../components/Club.vue'
 import Sante from '../components/Sante.vue'
 import Logement from '../components/Logement.vue'
 import Etudes from '../components/Etudes.vue'
@@ -22,6 +20,7 @@ import Register from '../components/Register.vue'
 import Dashboard from '../components/Dashboard.vue'
 
 
+
 Vue.use(Router);
 Vue.use(CircularCountDownTimer);
 
@@ -31,8 +30,6 @@ Vue.use(Router)
 export default new Router({
     routes: [
         {path: '/', name: 'Home', component: Home },
-        {path: '/Player', name: 'Player', component: Player },
-        {path: '/Club', name: 'Club', component: Club },
         {path: '/Sante', name: 'Sante', component: Sante },
         {path: '/Logement', name: 'Logement', component: Logement },
         {path: '/Etudes', name: 'Etudes', component: Etudes },
@@ -48,5 +45,6 @@ export default new Router({
         {path: '/Login', name: 'Login', component: Login },
         {path: '/Register', name: 'Register', component: Register },
         {path: '/Dashboard', name: 'Dashboard', component: Dashboard },
+        {path: '/*', redirect: '../../public/404.html' },
     ]
 })

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="countdown">
+            <circular-count-down-timer :initial-value="90" @finish="finished" style="margin-left: 37%" size="100" :show-hour="false"></circular-count-down-timer>
+    </div>
 
     <!-- Three Column Section -->
     <div>
@@ -85,15 +88,10 @@ export default {
       slide: 0,
       sliding: null
     };
-  }
-  // methods: {
-  //   onSlideStart(slide) {
-  //     this.sliding = true;
-  //   },
-  //   onSlideEnd(slide) {
-  //     this.sliding = false;
-  //   }
-  // }
+  },
+  finished: () => {
+        this.router.push("#");
+    },
 };
 </script>
 
